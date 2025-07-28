@@ -7,7 +7,7 @@ pipeline {
     stage('GetCode') {
       steps {
         git branch: 'main',
-            url: 'https://https://github.com/MilaDev7/Jenkins-repo.git'
+            url: 'https://github.com/MilaDev7/Jenkins-repo.git'
       }
     }
     stage('Build') {
