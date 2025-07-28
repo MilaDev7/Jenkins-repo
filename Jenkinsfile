@@ -1,0 +1,20 @@
+pipeline {
+  agent any
+  environment {
+    JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
+    PATH = "$PATH:/opt/apache-maven-3.9.11/bin"
+  }
+  stages {
+    stage('GetCode') {
+      steps {
+        git branch: 'main',
+            url: 'https://github.com/MilaDev7/Jenkins-repo.git'
+      }
+    }
+    stage('Build') {
+      steps {
+        sh 'mvn clean package'
+      }
+    }
+  }
+}
